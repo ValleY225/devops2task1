@@ -1,6 +1,10 @@
 #!/bin/bash
+set -euo pipefail
+
 echo "=== System Information ==="
 echo "Hostname: $(hostname)"
-echo "Uptime: $(uptime -p 2>/dev/null || echo 'N/A')"
+echo "Uptime: $(uptime -p)"
 echo "Memory Usage:"
-free -h 2>/dev/null || echo "Memory check available on Linux targets"
+free -h
+echo "Disk Usage:"
+df -h /
